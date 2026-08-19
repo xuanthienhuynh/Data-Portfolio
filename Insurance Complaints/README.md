@@ -1,14 +1,30 @@
-# X-Insurance Complaints Analytics
+<div align="center">
+
+# 🛡️ X-Insurance Complaints Analytics
 
 **Operational deep-dive into 13,846 insurance complaints — uncovering process bottlenecks, the real drivers of customer dissatisfaction, and actionable recommendations for X-Insurance leadership.**
 
-![SQL Server](https://img.shields.io/badge/SQL_Server-Data_Cleansing_%26_EDA-CC2927?style=flat-square)
-![Power BI](https://img.shields.io/badge/Power_BI-Data_Modeling_%26_DAX-F2C811?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Completed-2E7D32?style=flat-square)
+<img src="https://img.shields.io/badge/SQL_Server-Data_Cleansing_%26_EDA-CC2927?style=flat-square" alt="SQL Server">
+<img src="https://img.shields.io/badge/Power_BI-Data_Modeling_%26_DAX-F2C811?style=flat-square" alt="Power BI">
+<img src="https://img.shields.io/badge/Status-Completed-2E7D32?style=flat-square" alt="Status">
+
+<br><br>
+
+<img src="screenshots/02_executive_summary.png" alt="Executive Summary" width="800">
+
+</div>
 
 ---
 
-## Overview
+### ⚡ The Numbers That Matter
+
+| 📋 Complaints Analyzed | ⏳ Backlogged >30 Days | 🔴 Stuck Over 1 Year | 🔁 Volume From Repeat Customers |
+|:---:|:---:|:---:|:---:|
+| **13,846** | **232** (1.68%) | **51%** of backlog | **68%** from just 46.3% of customers |
+
+---
+
+## 1. 🎯 Overview
 
 X-Insurance is a simulated insurance company drowning in complaints. Leadership wants to know: **is the resolution process actually keeping up with customers, and if not, why?**
 
@@ -23,21 +39,23 @@ This project puts me in the role of an **Operations Data Analyst**, tasked with:
 
 ---
 
-## Table of Contents
+## 2. 📑 Table of Contents
 
-- [Project Structure](#project-structure)
-- [Data Model](#data-model)
-- [Tech Stack](#tech-stack)
-- [Data Quality Issues Found](#data-quality-issues-found)
-- [The 10 Business Questions](#the-10-business-questions)
-- [Key Insights](#key-insights)
-- [Dashboard](#dashboard)
-- [How to Reproduce](#how-to-reproduce)
-- [Phiên bản Tiếng Việt (Vietnamese Version)](#phiên-bản-tiếng-việt)
+- [1. Overview](#1--overview)
+- [2. Table of Contents](#2--table-of-contents)
+- [3. Project Structure](#3--project-structure)
+- [4. Data Model](#4--data-model)
+- [5. Tech Stack](#5--tech-stack)
+- [6. Data Quality Issues Found](#6--data-quality-issues-found)
+- [7. The 10 Business Questions](#7--the-10-business-questions)
+- [8. Key Insights](#8--key-insights)
+- [9. Dashboard](#9--dashboard)
+- [10. How to Reproduce](#10-️-how-to-reproduce)
+- [11. Phiên bản Tiếng Việt](#11--phiên-bản-tiếng-việt-vietnamese-version)
 
 ---
 
-## Project Structure
+## 3. 🗂️ Project Structure
 
 ```text
 Insurance Complaints/
@@ -45,15 +63,15 @@ Insurance Complaints/
 ├── data/         → Cleaned CSV data files
 ├── screenshots/  → Exported dashboard images
 ├── sql/          → SQL scripts for the project:
-│   ├── 01_schema_setup.sql              → Schema creation & Data import
-│   ├── 02_eda_business_questions.sql    → Queries for the 10 business questions
-│   └── 03_create_views.sql              → SQL Views for Power BI modeling
+│   ├── 01_schema_setup.sql               → Schema creation & Data import
+│   ├── 02__eda_business_questions.sql    → Queries for the 10 business questions
+│   └── 03__create_views.sql              → SQL Views for Power BI modeling
 └── README.md
 ```
 
 ---
 
-## Data Model
+## 4. 🧩 Data Model
 
 **Snowflake schema** (commonly referred to as Star Schema in this project's context, with one snowflaked branch):
 
@@ -67,7 +85,7 @@ Insurance Complaints/
 
 ---
 
-## Tech Stack
+## 5. 🛠️ Tech Stack
 
 | Tool | Role |
 |---|---|
@@ -78,7 +96,7 @@ SQL was chosen as the primary analysis engine because the source data is inheren
 
 ---
 
-## Data Quality Issues Found
+## 6. ⚠️ Data Quality Issues Found
 
 A significant part of this project was **not trusting the data at face value**. Several issues were discovered, investigated, and documented rather than silently patched:
 
@@ -91,7 +109,7 @@ A significant part of this project was **not trusting the data at face value**. 
 
 ---
 
-## The 10 Business Questions
+## 7. ❓ The 10 Business Questions
 
 | # | Question |
 |---|---|
@@ -110,7 +128,7 @@ Full SQL queries are in [`sql/`](./sql).
 
 ---
 
-## Key Insights
+## 8. 💡 Key Insights
 
 - **Distribution network and region are not the problem** — both show negligible variance across categories, ruling out two common (but ultimately wrong) hypotheses.
 - **"Urgent" complaints are processed *slower* than "Non-Urgent" ones** through paper/legal channels (Court Order, Written, Email) — a 3–6 day reversal of the intended priority system.
@@ -121,31 +139,32 @@ Full SQL queries are in [`sql/`](./sql).
 
 ---
 
-## Dashboard
+## 9. 📊 Dashboard
 
-This 4-page Power BI report is designed to guide stakeholders from a high-level overview down to granular, case-level action items.
+This 4-page Power BI report is designed to guide stakeholders from a high-level overview down to granular, case-level action items. *(Executive Summary shown at the top of this page).*
 
-### 1. Introduction
-Project framing, objectives, tech stack, and data scope.
-![Introduction](screenshots/01_introduction.png)
+<br>
 
-### 2. Executive Summary
-Top-line KPIs, root-cause analysis (NSA rate), and SLA anomalies.
-![Executive Summary](screenshots/02_executive_summary.png)
+**1. Introduction**<br>
+Project framing, objectives, tech stack, and data scope.<br>
+<img src="screenshots/01_introduction.png" alt="Introduction">
+<br><br>
 
-### 3. Operation Drill-Down (Process)
-Backlog severity, bottleneck tracking by status, and a case-level detail table for immediate action.
-![Process View](screenshots/03_process.png)
+**2. Operation Drill-Down (Process)**<br>
+Backlog severity, bottleneck tracking by status, and a case-level detail table for immediate action.<br>
+<img src="screenshots/03_process.png" alt="Process View">
+<br><br>
 
-### 4. Operation Drill-Down (Customer & Product)
-Product hotspots, channel performance, age-group behavior, and the repeat-customer Pareto effect.
-![Customer and Product View](screenshots/04_customer_product.png)
+**3. Operation Drill-Down (Customer & Product)**<br>
+Product hotspots, channel performance, age-group behavior, and the repeat-customer Pareto effect.<br>
+<img src="screenshots/04_customer_product.png" alt="Customer and Product View">
+<br><br>
 
 > **Interactive Version:** Open [`dashboard/InsuranceComplaints.pbix`](./dashboard) in Power BI Desktop to interact with the full dashboard (filters, tooltips, drill-downs).
 
 ---
 
-## How to Reproduce
+## 10. ⚙️ How to Reproduce
 
 1. Restore the SQL Server database using the schema in [`sql/01_schema_setup.sql`](./sql).
 2. Load the cleaned CSVs from [`data/`](./data) into the corresponding tables (staging-table pattern recommended — see comments in the schema script).
@@ -154,22 +173,20 @@ Product hotspots, channel performance, age-group behavior, and the repeat-custom
 
 ---
 
-## Author
-
+## ✍️ Author
 
 **HUYNH XUAN THIEN** — Information Systems student (Faculty of Information Technology) at Saigon University. Self-initiated portfolio project built to demonstrate SQL, data modeling, data processing, and visualization skills for Data Analyst and Data Engineer roles.
 
 **📫 Contact:** [huynhxuanthien0401@gmail.com](mailto:huynhxuanthien0401@gmail.com) | 0398811258 | [LinkedIn Profile](https://www.linkedin.com/in/huynh-xuan-thien-95165030b/)
 
 ---
+---
 
-
-## Phiên bản Tiếng Việt
-
+## 11. 🇻🇳 Phiên bản Tiếng Việt (Vietnamese Version)
 <details>
 <summary><strong>📖 Click để xem README chi tiết bằng Tiếng Việt</strong></summary>
 
-### Tổng quan
+### 1. 🎯 Tổng quan
 
 X-Insurance là một công ty bảo hiểm mô phỏng đang gặp vấn đề với khối lượng khiếu nại lớn. Ban lãnh đạo muốn biết: **quy trình xử lý hiện tại có đang theo kịp khách hàng không, và nếu không thì vì sao?**
 
@@ -182,7 +199,20 @@ Project này đặt tôi vào vai trò **Chuyên viên Phân tích Dữ liệu V
 
 > **Lưu ý:** Đây là bộ dữ liệu mô phỏng dùng cho mục đích portfolio, không đại diện cho dữ liệu thật của bất kỳ công ty bảo hiểm nào.
 
-### Cấu trúc thư mục
+### 2. 📑 Mục lục
+
+- [1. Tổng quan](#1--tổng-quan)
+- [2. Mục lục](#2--mục-lục)
+- [3. Cấu trúc thư mục](#3--cấu-trúc-thư-mục)
+- [4. Mô hình dữ liệu](#4--mô-hình-dữ-liệu)
+- [5. Công cụ sử dụng](#5--công-cụ-sử-dụng)
+- [6. Các vấn đề dữ liệu đã phát hiện](#6--các-vấn-đề-dữ-liệu-đã-phát-hiện)
+- [7. 10 câu hỏi kinh doanh](#7--10-câu-hỏi-kinh-doanh)
+- [8. Insight chính](#8--insight-chính)
+- [9. Dashboard](#9--dashboard-1)
+- [10. Cách tái tạo lại project](#10-️-cách-tái-tạo-lại-project)
+
+### 3. 🗂️ Cấu trúc thư mục
 
 ```text
 Insurance Complaints/
@@ -190,12 +220,13 @@ Insurance Complaints/
 ├── data/         → Dữ liệu CSV đã làm sạch
 ├── screenshots/  → Ảnh chụp các trang dashboard
 ├── sql/          → Các script SQL cho project:
-│   ├── 01_schema_setup.sql              → Khởi tạo schema & nạp dữ liệu
-│   ├── 02_eda_business_questions.sql    → Truy vấn cho 10 câu hỏi kinh doanh
-│   └── 03_create_views.sql              → Các SQL View phục vụ Power BI model
+│   ├── 01_schema_setup.sql               → Khởi tạo schema & nạp dữ liệu
+│   ├── 02__eda_business_questions.sql    → Truy vấn cho 10 câu hỏi kinh doanh
+│   └── 03__create_views.sql              → Các SQL View phục vụ Power BI model
 └── README.md
 ```
-### Mô hình dữ liệu
+
+### 4. 🧩 Mô hình dữ liệu
 
 **Snowflake Schema** (thường gọi là Star Schema trong ngữ cảnh project này, có 1 nhánh dạng snowflake):
 
@@ -207,7 +238,7 @@ Insurance Complaints/
 
 **Khung thời gian dữ liệu:** khiếu nại trải dài từ **08/07/2011 đến 14/05/2020**; lịch sử trạng thái chỉ có từ **04/09/2018** trở đi — điều này giới hạn mức độ đại diện của phân tích Backlog/Bottleneck (câu 4, 8) cho toàn bộ giai đoạn, và được công bố rõ ràng thay vì che giấu.
 
-### Công cụ sử dụng
+### 5. 🛠️ Công cụ sử dụng
 
 | Công cụ | Vai trò |
 |---|---|
@@ -216,7 +247,7 @@ Insurance Complaints/
 
 SQL được chọn làm công cụ phân tích chính vì dữ liệu nguồn vốn có cấu trúc quan hệ (nhiều bảng dimension liên kết khóa ngoại); các logic window-function phức tạp (tìm trạng thái mới nhất của mỗi khiếu nại, đo thời gian giữa các lần chuyển trạng thái) được đóng gói vào **SQL View** thay vì viết lại bằng DAX, để tránh trùng lặp và có nguy cơ lệch logic giữa 2 tầng.
 
-### Các vấn đề dữ liệu đã phát hiện
+### 6. ⚠️ Các vấn đề dữ liệu đã phát hiện
 
 Một phần quan trọng của project này là **không tin tưởng dữ liệu ngay từ đầu**. Nhiều vấn đề đã được phát hiện, điều tra và ghi lại thay vì âm thầm sửa cho qua:
 
@@ -227,7 +258,7 @@ Một phần quan trọng của project này là **không tin tưởng dữ li�
 5. **Chuyển trạng thái cùng ngày** — `StatusDate` chỉ lưu ở độ chính xác cấp ngày, khiến nhiều sự kiện khác nhau trong cùng 1 ngày bị hiểu nhầm thành "chuyển trạng thái tức thời" khi dùng `LEAD()` thô. Đã lọc bỏ để có kết quả bottleneck chính xác (câu 8).
 6. **Giả thuyết ban đầu bị bác bỏ** — câu 9 ban đầu giả định khối lượng khiếu nại cao của Capital Accumulation phản ánh sự bất mãn sản phẩm; khi đào sâu vào category thật, top nguyên nhân lại là yêu cầu hành chính/thủ tục, không phải khiếu nại dịch vụ. Giả thuyết đã được điều chỉnh dựa trên bằng chứng, không giữ nguyên cho khớp với giả định ban đầu.
 
-### 10 câu hỏi kinh doanh
+### 7. ❓ 10 câu hỏi kinh doanh
 
 | # | Câu hỏi |
 |---|---|
@@ -244,7 +275,7 @@ Một phần quan trọng của project này là **không tin tưởng dữ li�
 
 Toàn bộ query SQL nằm trong [`sql/`](./sql).
 
-### Insight chính
+### 8. 💡 Insight chính
 
 - **Mạng lưới phân phối và khu vực địa lý không phải nguyên nhân** — cả 2 đều cho thấy chênh lệch không đáng kể giữa các nhóm, loại bỏ 2 giả thuyết phổ biến (nhưng sai) ban đầu.
 - **Khiếu nại "Urgent" lại được xử lý CHẬM HƠN "Non-Urgent"** qua các kênh giấy tờ/pháp lý (Court Order, Written, Email) — nghịch đảo 3-6 ngày so với ý nghĩa ưu tiên vốn có.
@@ -253,43 +284,40 @@ Toàn bộ query SQL nằm trong [`sql/`](./sql).
 - **46,3% khách hàng là khiếu nại lặp lại**, nhưng tạo ra **68% tổng khối lượng khiếu nại** — hiệu ứng Pareto rõ rệt, cần cơ chế xử lý escalation riêng.
 - **Xu hướng đánh giá "khẩn cấp" giảm đều theo tuổi** — từ 4,55% (dưới 30) xuống 1,45% (trên 60), chênh lệch gấp 3 lần.
 
-### Dashboard
+### 9. 📊 Dashboard
 
-Báo cáo Power BI 4 trang này được thiết kế để dẫn dắt người xem từ bức tranh tổng quan đến các hành động xử lý cụ thể ở cấp độ từng ca khiếu nại.
+Báo cáo Power BI 4 trang này được thiết kế để dẫn dắt người xem từ bức tranh tổng quan đến các hành động xử lý cụ thể ở cấp độ từng ca khiếu nại. *(Trang Executive Summary đã hiện ở đầu trang).*
 
-**1. Introduction**
-Bối cảnh project, mục tiêu, tech stack, và phạm vi dữ liệu.
-![Introduction](screenshots/01_introduction.png)
+<br>
 
-**2. Executive Summary**
-KPI tổng quan, phân tích nguyên nhân gốc rễ (Tỷ lệ NSA), và các bất thường về SLA.
-![Executive Summary](screenshots/02_executive_summary.png)
+**1. Introduction**<br>
+Bối cảnh project, mục tiêu, tech stack, và phạm vi dữ liệu.<br>
+<img src="screenshots/01_introduction.png" alt="Introduction">
+<br><br>
 
-**3. Operation Drill-Down (Process)**
-Mức độ nghiêm trọng của backlog, theo dõi điểm nghẽn (bottleneck) theo trạng thái, và bảng chi tiết từng case để xử lý ngay lập tức.
-![Process View](screenshots/03_process.png)
+**2. Operation Drill-Down (Process)**<br>
+Mức độ nghiêm trọng của backlog, theo dõi điểm nghẽn (bottleneck) theo trạng thái, và bảng chi tiết từng case để xử lý ngay lập tức.<br>
+<img src="screenshots/03_process.png" alt="Process View">
+<br><br>
 
-**4. Operation Drill-Down (Customer & Product)**
-Điểm nóng sản phẩm, hiệu suất kênh tiếp nhận, hành vi theo nhóm tuổi, và hiệu ứng Pareto của tệp khách hàng khiếu nại lặp lại.
-![Customer and Product View](screenshots/04_customer_product.png)
+**3. Operation Drill-Down (Customer & Product)**<br>
+Điểm nóng sản phẩm, hiệu suất kênh tiếp nhận, hành vi theo nhóm tuổi, và hiệu ứng Pareto của tệp khách hàng khiếu nại lặp lại.<br>
+<img src="screenshots/04_customer_product.png" alt="Customer and Product View">
+<br><br>
 
 > **Bản tương tác:** Mở file [`dashboard/InsuranceComplaints.pbix`](./dashboard) bằng Power BI Desktop để trải nghiệm toàn bộ dashboard (lọc, tooltips, drill-downs).
 
-
-
-### Cách tái tạo lại project
+### 10. ⚙️ Cách tái tạo lại project
 
 1. Khôi phục database SQL Server theo schema trong [`sql/01_schema_setup.sql`](./sql).
 2. Nạp các file CSV đã làm sạch từ [`data/`](./data) vào đúng bảng tương ứng (khuyến nghị dùng pattern staging-table — xem chú thích trong script schema).
 3. Chạy các View và script query trong [`sql/`](./sql) để tái tạo lại phân tích 10 câu hỏi.
 4. Mở [`dashboard/InsuranceComplaints.pbix`](./dashboard) bằng Power BI Desktop, cập nhật lại kết nối SQL Server về đúng instance local của bạn, rồi Refresh.
 
-### Tác giả
+### ✍️ Tác giả
 
-**HUỲNH XUÂN THIỆN** — Sinh viên ngành Hệ thống Thông tin (Khoa Công nghệ Thông tin), Đại học Sài Gòn. Project cá nhân tự thực hiện nhằm thể hiện kỹ năng SQL, Data Modeling, xử lý dữ liệu và trực quan hóa cho các vị trí Data Analyst và Data Engineer.
+**HUỲNH XUÂN THIỆN** — Sinh viên chuyên ngành Hệ thống Thông tin (Khoa Công nghệ Thông tin), Đại học Sài Gòn. Project cá nhân tự thực hiện nhằm thể hiện kỹ năng SQL, Data Modeling, xử lý dữ liệu và trực quan hóa cho các vị trí Data Analyst và Data Engineer.
 
 **📫 Liên hệ:** [huynhxuanthien0401@gmail.com](mailto:huynhxuanthien0401@gmail.com) | 0398811258 | [LinkedIn Profile](https://www.linkedin.com/in/huynh-xuan-thien-95165030b/)
-
-
 
 </details>
