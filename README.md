@@ -9,6 +9,7 @@ Information Systems student (Faculty of Information Technology) at Saigon Univer
 
 | Project | Description | Tools | Link |
 |---|---|---|---|
+| **NYC Green Taxi Operations Analysis** | End-to-end ETL pipeline (raw → staging → mart) on 6M+ taxi trips, 15 business-question SQL analysis, and a 5-page Power BI dashboard addressing shift underutilization, tip-rate decline, and airport trip profitability. | PostgreSQL, Python (pandas), Power BI, DAX | [View Project →](./NYC_Green_Taxi) |
 | **Insurance Complaints Analytics** | Operational deep-dive into 13,846 insurance complaints — process bottlenecks, root-cause analysis, and a 4-page Power BI dashboard. | SQL Server, Power BI, DAX | [View Project →](./Insurance%20Complaints) |
 | *More projects coming soon* | | | |
 

@@ -1,0 +1,12 @@
+# Môi trường ảo và bộ nhớ đệm
+venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# File chứa mật khẩu/chuỗi kết nối Database
+.env
+
+# Dữ liệu Data nặng và file Power BI
+data/dataset/*.parquet
+data/dataset/*.csv
+dashboard/*.pbix
